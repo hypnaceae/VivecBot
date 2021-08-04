@@ -12,25 +12,6 @@ CHAIN_LENGTH = 3  # higher lengths increase computation cost; sentences will be 
 # 3 is a good balance between coherence and originality; around 8 most generated sentences will be identical
 # to one in the corpus. Think of this as the N-gram parameter.
 
-"""
-import tweepy
-
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-ACCESS_KEY = ''
-ACCESS_SECRET = ''
-
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-api = tweepy.API(auth)
-
-try:
-	api.verify_credentials()
-	print("Authentication successful!")
-except:
-	print("Could not authenticate. Please check your keys.")
-"""
-
 def make_sentence():
 	"""Generate a sentence from the corpus, using a Markov chain object."""
 	obj = markov.Markov(TRAINING_PATH, CHAIN_LENGTH)
